@@ -4,14 +4,14 @@ function countUniqueEmails(emailFile) {
   // do work here
   const theList = emailFile.emails; //this is an array
 
-  return theList.reduce(function(p, c) {
-    let email = c.email;
-    if (!p[email]) {
-      p[email] = 1;
+  return theList.reduce(function(previous, current) {
+    let email = current.email;
+    if (!previous[email]) {
+      previous[email] = 1;
     } else {
-      p[email]++;
+      previous[email]++;
     }
-    return p;
+    return previous;
   }, {});
 }
 
